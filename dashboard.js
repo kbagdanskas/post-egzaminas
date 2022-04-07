@@ -10,7 +10,7 @@ const generate = () => {
 
 // api url
 const api_url =
-  "https://18.193.250.181:1337/api/people?populate=*&filters[country][id][$eq]=1";
+  "http://18.193.250.181:1337/api/people?populate=*&filters[country][id][$eq]=1";
 
 async function getapi(url) {
   const response = await fetch(url);
@@ -48,7 +48,7 @@ function show(data) {
 }
 const getCountry = async () => {
   try {
-    const res = await fetch("https://18.193.250.181:1337/api/countries");
+    const res = await fetch("http://18.193.250.181:1337/api/countries");
     const data = await res.json();
     const countrySelect = document.getElementById("country");
     const countries = [...new Set(data.data.map((x) => x.attributes.country))];

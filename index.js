@@ -124,7 +124,7 @@ function getValue() {
 
 const getCountry = async () => {
   try {
-    const res = await fetch("https://18.193.250.181:1337/api/countries");
+    const res = await fetch("http://18.193.250.181:1337/api/countries");
     const data = await res.json();
     const countrySelect = document.getElementById("country");
     const countries = [...new Set(data.data.map((x) => x.attributes.country))];
